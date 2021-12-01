@@ -49,3 +49,14 @@ var array[4][2]int
 array := [4][2]int{{10, 11}, {20, 21}, {30, 31}, {40, 41}}
 ```
 
+### Passing arrays to functions
+
+In Go, variables are passed to functions by value. This means that Go creates a copy of the variable and passes that variable to the function.  
+
+To reduce the amount of data copied to the stack, pass a pointer to the function:
+
+```go
+var array [1000000000]int
+
+randomFunc(&array)
+```
